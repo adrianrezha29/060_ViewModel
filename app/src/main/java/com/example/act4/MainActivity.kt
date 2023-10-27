@@ -196,7 +196,7 @@ fun SelectJK(
 
 @Composable
 fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, emailnya:String, alamatnya: String,
-              status: String){
+              statusnya: String){
     ElevatedCard (
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
@@ -224,7 +224,7 @@ fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, emailnya:St
             modifier = Modifier
                 .padding(horizontal = 10.dp, vertical = 5.dp)
         )
-        Text(text = "Status : " + status,
+        Text(text = "Status : " + statusnya,
             modifier = Modifier
                 .padding(horizontal = 10.dp, vertical = 4.dp)
         )
