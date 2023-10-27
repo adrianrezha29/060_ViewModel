@@ -116,6 +116,17 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
             textTlp = it
         }
     )
+    )
+    OutlinedTextField(
+        value = textEmail,
+        singleLine = true,
+        shape = MaterialTheme.shapes.large,
+        modifier = Modifier.fillMaxWidth(),
+        label = {Text(text = "Email")},
+        onValueChange = {
+            textEmail = it
+        }
+    )
     OutlinedTextField(
         value = textAlt,
         singleLine = true,
@@ -145,6 +156,7 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         namanya = cobaViewModel.namaUsr,
         teleponnya = cobaViewModel.noTelp,
         jenisnya = cobaViewModel.jenisKL,
+        emailnya  = cobaViewModel.email,
         alamatnya = cobaViewModel.alamat
 
     )
@@ -181,7 +193,7 @@ fun SelectJK(
 }
 
 @Composable
-fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, alamatnya: String){
+fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, emailnya:String, alamatnya: String){
     ElevatedCard (
         elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp
@@ -201,6 +213,10 @@ fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, alamatnya: 
             modifier = Modifier
                 .padding(horizontal = 10.dp, vertical = 4.dp)
         )
+        Text(text = "Email : " + emailnya,
+            modifier = Modifier
+                .padding(horizontal = 10.dp, vertical = 5.dp)
+        )
         Text(text = "Alamat : " + alamatnya,
             modifier = Modifier
                 .padding(horizontal = 10.dp, vertical = 5.dp)
@@ -212,6 +228,6 @@ fun TextHasil(namanya: String, teleponnya: String, jenisnya: String, alamatnya: 
 @Composable
 fun GreetingPreview() {
     Act4Theme {
-        Greeting("Android")
+        TampilLayout()
     }
 }
